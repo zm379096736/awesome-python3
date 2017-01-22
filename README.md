@@ -1,2 +1,2 @@
-# awesome-python3
-# ��Ŀ¼
+﻿# awesome-python3
+# 根目录
