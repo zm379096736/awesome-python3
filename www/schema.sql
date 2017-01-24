@@ -1,10 +1,13 @@
+
+-- schema.sql
+
 drop database if exists awesome;
 
 create database awesome;
 
 use awesome;
 
-grand select, insert, update, delete on awesome.* to 'www-data'@'localhost' identified by 'www-data';
+grant select, insert, update, delete on awesome.* to 'www-data'@'localhost' identified by 'www-data';
 
 create table users (
     `id` varchar(50) not null,
@@ -17,8 +20,8 @@ create table users (
     unique key `idx_email` (`email`),
     key `idx_created_at` (`created_at`),
     primary key (`id`)
-  ) engine=innodb default charset=utf-8;
-  
+) engine=innodb default charset=utf8;
+
 create table blogs (
     `id` varchar(50) not null,
     `user_id` varchar(50) not null,
@@ -29,9 +32,9 @@ create table blogs (
     `content` mediumtext not null,
     `created_at` real not null,
     key `idx_created_at` (`created_at`),
-    primary key (`id`)       
-  ) engine=innodb default charset=utf-8;
-  
+    primary key (`id`)
+) engine=innodb default charset=utf8;
+
 create table comments (
     `id` varchar(50) not null,
     `blog_id` varchar(50) not null,
@@ -41,13 +44,5 @@ create table comments (
     `content` mediumtext not null,
     `created_at` real not null,
     key `idx_created_at` (`created_at`),
-    primary key (`id`)     
-  ) engine=innodb default charset=utf-8;
-
-
-
-
-
-
-
-
+    primary key (`id`)
+) engine=innodb default charset=utf8;
