@@ -1,3 +1,6 @@
+# -*- coding: utf-8 -*-
+
+__author__ = 'tseng'
 import time
 # uuid是python中生成唯一ID的库
 import uuid
