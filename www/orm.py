@@ -1,7 +1,6 @@
-#!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
-__author__ = 'ReedSun'
+__author__ = 'tseng'
 
 import asyncio
 import logging

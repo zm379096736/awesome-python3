@@ -1,7 +1,6 @@
-#!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
-
+__author__ = 'tseng'
 import asyncio, os, inspect, logging
 
 # 高阶函数模块, 提供常用的高阶函数, 如wraps
