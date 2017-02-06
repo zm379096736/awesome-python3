@@ -309,3 +309,20 @@ async def api_delete_blog(request, *, id):
     blog = await Blog.find(id)
     await blog.remove()
     return dict(id=id)
+    
+@get('/upload')
+def show_upload_page():
+    return {"__template__":"upload.html"}
+
+@post('/upload')
+async def upload(request):
+    data=await request.post()
+    field=data['txt']
+    name=field.name
+    filename=field.filename
+    tempfile=field.file.read() #field.file就是一个临时文件对象。
+    content_type=field.content_type
+    f = open(name, 'wb')
+    f.write(tempfile)
+    f.close()
+    return web.Response(text='success:%s %s %s %s' % (name,filename,content_type,tempfile));
